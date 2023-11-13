@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>飲食店予約</title>
+    </head>
+
+    <body>
+        <h1>予約画面</h1>
+        <p>
+            店舗名　：{{ shop.name }}<br>
+            電話番号：{{ shop.tel }}<br>
+            郵便番号：{{ shop.post_code }}<br>
+            住所　　：{{ shop.address }}<br>
+        </p>
+        <p>
+            <input type="button" onclick="location.href='/availability?shop_id={{ shop.shop_id }}&date={% now "Y-m-d" %}'" value="予約する">
+        </p>
+    </body>
+
+</html>

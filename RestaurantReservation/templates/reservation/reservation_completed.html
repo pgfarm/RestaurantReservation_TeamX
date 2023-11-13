@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>飲食店予約</title>
+    </head>
+
+    <body>
+        <h1>予約画面</h1>
+        <p>
+            予約が完了しました。<br>
+            キャンセルや変更は電話でお願いします。
+        </p>
+        <p>
+            <strong>予約者情報</strong><br>
+            予約者名：{{ reservation.reserver_name }}<br>
+            電話番号：{{ reservation.reserver_tel }}<br>
+            予約人数：{{ reservation.reserver_num }}名<br>
+            予約日時：{{ reservation.reservation_date }} {{ reservation.reservation_time }}:00-{{ reservation.reservation_time|add:"1" }}:00<br>
+            アレルギー：{{ reservation.reserver_allergy }}<br>
+        </p>
+        <p>
+            <strong>店舗情報</strong><br>
+            店舗名　：{{ shop.name }}<br>
+            電話番号：{{ shop.tel }}<br>
+            郵便番号：{{ shop.post_code }}<br>
+            住所　　：{{ shop.address }}<br>
+        </p>
+        <a href="/shop_list">＜ トップ画面に戻る</a>
+    </body>
+</html>

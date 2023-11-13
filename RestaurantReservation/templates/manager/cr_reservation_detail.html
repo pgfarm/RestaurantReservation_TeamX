@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>管理画面</title>
+    </head>
+
+    <body>
+        <h1>予約確認</h1>
+        <p>
+            店舗名　：{{ shop.name }}<br>
+            予約日時：{{ date }} {{ time }}:00-{{ time|add:"1" }}:00
+        </p>
+        {% for reservation in object_list %}
+        {% if reservation.reserver_allergy %}
+        <p style="border-width:2px; border-style:solid; background-color:#FFFBC7">
+        {% else %}
+        <p style="border-width:2px; border-style:solid;">
+        {% endif %}
+            予約者名：{{ reservation.reserver_name }}<br>
+            電話番号：{{ reservation.reserver_tel }}<br>
+            予約人数：{{ reservation.reserver_num }}名<br>
+            アレルギー：{{ reservation.reserver_allergy }}<br>
+        </p>
+        {% empty %}
+            <p>予約がありません</p>
+        {% endfor %}
+        <a href="/manager/console">＜ 管理コンソールに戻る</a>
+    </body>
+</html>

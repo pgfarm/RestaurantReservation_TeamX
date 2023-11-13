@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>管理画面</title>
+    </head>
+
+    <body>
+        <h1>店舗設定</h1>
+        <p><input type="button" onclick="location.href='/manager/setting_shop/register_form'" value="新店舗登録"></p>
+        {% for shop in object_list %}
+        <p>
+            <a href="/manager/setting_shop/update_form/{{ shop.shop_id }}">
+                {{ shop.name }}
+            </a><br>
+            　{{ shop.address }}
+        </p>
+        {% endfor %}
+    </body>
+</html>

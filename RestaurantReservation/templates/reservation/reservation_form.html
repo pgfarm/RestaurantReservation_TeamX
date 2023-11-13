@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>飲食店予約</title>
+    </head>
+
+    <body>
+        <h1>予約画面</h1>
+        <p>
+            店舗名　：{{ shop.name }}<br>
+            予約日時：{{ date }} {{ time }}:00-{{ time|add:"1" }}:00
+        </p>
+        <form method="POST">
+            {% csrf_token %}
+            予約者名：<input type="text" name="reserver_name"><br>
+            電話番号：<input type="text" name="reserver_tel"><br>
+            予約人数：
+            <select name="reserver_num">
+                <option value="1">１人</option>
+                <option value="2">２人</option>
+                <option value="3">３人</option>
+                <option value="4">４人</option>
+            </select><br>
+            アレルギーがある場合はご記入ください<br>
+            <textarea name="reserver_allergy"></textarea><br>
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+            <p><input type="submit" value="予約する"></p>
+        </form>
+    </body>
+</html>

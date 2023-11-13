@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>管理画面</title>
+    </head>
+
+    <body>
+        <h1>店舗の変更</h1>
+        <p>店舗の変更が完了しました。</p>
+        <p>
+            <strong>店舗情報</strong><br>
+            店舗名　：{{ shop.name }}<br>
+            電話番号：{{ shop.tel }}<br>
+            郵便番号：{{ shop.post_code }}<br>
+            住所　　：{{ shop.address }}<br>
+            席数　　：{{ shop.seat_num }}席<br>
+        </p>
+        <a href="/manager/console">＜ 管理コンソールに戻る</a>
+    </body>
+</html>

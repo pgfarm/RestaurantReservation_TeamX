@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>管理画面</title>
+    </head>
+
+    <body>
+        <h1>予約確認</h1>
+        <p>
+            <p>{{ shop.name }}</p>
+            <table border="1">
+                <a href="/manager/confirm_reservation/reservation?shop_id={{ shop.shop_id }}&date={{ yesterday }}">＜前日</a>
+                　{{ date }}　
+                <a href="/manager/confirm_reservation/reservation?shop_id={{ shop.shop_id }}&date={{ tomorrow }}">翌日＞</a>
+                <tr>
+                    <td style="text-align:center;width: 200px">時間</td>
+                    <td style="text-align:center;width: 200px">予約席数</td>
+                </tr>
+                {% for key, value in reservation_dist.items %}
+                <tr>
+                    <td style="text-align:center;width: 200px">{{ key }}:00-{{ key|add:"1" }}:00</td>
+                    <td style="text-align:center;width: 200px">
+                        {% if value > 0%}
+                        <a href="/manager/confirm_reservation/reservation_detail?shop_id={{ shop.shop_id }}&date={{ date }}&time={{ key }}">
+                                {{ value }}席
+                            </a>
+                        {% else %}
+                            {{ value }}席
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </p>
+    </body>
+</html>

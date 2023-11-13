@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>管理画面</title>
+    </head>
+
+    <body>
+        <h1>店舗の削除</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <p>本当に削除しますか？</p>
+            店舗名　：{{ shop.name }}<br>
+            電話番号：{{ shop.tel }}<br>
+            郵便番号：{{ shop.post_code }}<br>
+            住所　　：{{ shop.address }}<br>
+            席数　　：{{ shop.seat_num }}席<br>
+            <p><input type="submit" value="削除する"></p>
+        </form>
+    </body>
+</html>

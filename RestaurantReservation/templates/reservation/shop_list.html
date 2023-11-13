@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>飲食店予約</title>
+    </head>
+
+    <body>
+        <h1>予約画面</h1>
+        {% for shop in object_list %}
+        <p>
+            <a href="/shop_detail/{{ shop.shop_id }}">
+                {{ shop.name }}
+            </a><br>
+            　{{ shop.address }}
+        </p>
+        {% endfor %}
+    </body>
+</html>

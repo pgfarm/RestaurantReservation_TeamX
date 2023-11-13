@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>管理画面</title>
+    </head>
+
+    <body>
+        <h1>予約確認</h1>
+        {% for shop in object_list %}
+        <p>
+            <a href="/manager/confirm_reservation/reservation?shop_id={{ shop.shop_id }}&date={% now "Y-m-d" %}">
+                {{ shop.name }}
+            </a><br>
+            　{{ shop.address }}
+        </p>
+        {% endfor %}
+    </body>
+</html>
