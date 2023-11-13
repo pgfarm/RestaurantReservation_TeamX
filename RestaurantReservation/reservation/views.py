@@ -18,6 +18,6 @@ class ShopDetail(DetailView):
 # いまからコーディングします
 
 # A004（未開発）
-
+# ここも編集します
 
 # A005（未開発）
