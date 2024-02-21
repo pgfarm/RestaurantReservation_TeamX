@@ -15,9 +15,12 @@ class ShopDetail(DetailView):
     model = Shop
 
 # A003（未開発）
-# 開発します
+# 開発します。
+class AAA():
+    aaa = 111
 
 # A004（未開発）
-# ここも編集します
+class AAAA():
+    aaa = 111
 
 # A005（未開発）
