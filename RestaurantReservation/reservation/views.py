@@ -24,5 +24,8 @@ class AAAA():
     aaa = 111
 
 # A005（未開発）
+class BBBB():
+    bbbb = 222
+    
 class BBB():
     bbb = 222
